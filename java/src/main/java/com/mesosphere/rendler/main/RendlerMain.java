@@ -42,7 +42,7 @@ public class RendlerMain {
         .setData(ByteString.copyFromUtf8(System.getProperty("user.dir")))
         .setName("Render Executor (Java)").setSource("java").build();
 
-    FrameworkInfo.Builder frameworkBuilder = FrameworkInfo.newBuilder().setFailoverTimeout(120000)
+    FrameworkInfo.Builder frameworkBuilder = FrameworkInfo.newBuilder().setFailoverTimeout(60)
         .setUser("") // Have Mesos fill in
         // the current user.
         .setName("Rendler Framework (Java)");
