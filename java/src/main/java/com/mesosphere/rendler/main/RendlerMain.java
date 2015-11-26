@@ -5,6 +5,7 @@ import org.apache.mesos.Protos.CommandInfo;
 import org.apache.mesos.Protos.Credential;
 import org.apache.mesos.Protos.ExecutorID;
 import org.apache.mesos.Protos.ExecutorInfo;
+import org.apache.mesos.Protos.FrameworkID;
 import org.apache.mesos.Protos.FrameworkInfo;
 import org.apache.mesos.Protos.Status;
 import org.apache.mesos.Scheduler;
@@ -43,10 +44,10 @@ public class RendlerMain {
         .setName("Render Executor (Java)").setSource("java").build();
 
     FrameworkInfo.Builder frameworkBuilder = FrameworkInfo.newBuilder().setFailoverTimeout(60)
-        .setUser("") // Have Mesos fill in
-        // the current user.
-        .setName("Fan Rendler Framework (Java)")
-        .setId(FrameworkID.parseFrom("Test".getBytes()));;
+            .setUser("") // Have Mesos fill in
+            // the current user.
+            .setName("Fan Rendler Framework (Java)")
+            .setId(FrameworkID.parseFrom("Test".getBytes()));;
 
     if (System.getenv("MESOS_CHECKPOINT") != null) {
       System.out.println("Enabling checkpoint for the framework");
