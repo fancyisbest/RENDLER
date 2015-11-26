@@ -45,7 +45,8 @@ public class RendlerMain {
     FrameworkInfo.Builder frameworkBuilder = FrameworkInfo.newBuilder().setFailoverTimeout(60)
         .setUser("") // Have Mesos fill in
         // the current user.
-        .setName("Rendler Framework (Java)");
+        .setName("Fan Rendler Framework (Java)")
+        .setId(FrameworkID.parseFrom("Test".getBytes()));;
 
     if (System.getenv("MESOS_CHECKPOINT") != null) {
       System.out.println("Enabling checkpoint for the framework");
